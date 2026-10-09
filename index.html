@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pensiero Strategico del Generale</title>
+    <title>Pensiero Militare del Bracco Vanny</title>
 
     <!-- Meta tag per anteprima Social (Open Graph & Twitter) -->
-    <meta property="og:title" content="Pensiero Strategico del Generale">
-    <meta property="og:description" content="Una riflessione marziale e inattaccabile per la tua giornata.">
+    <meta property="og:title" content="Pensiero Strategico del Bracco Vanny">
+    <meta property="og:description" content="Rapporto tattico immediato, privo di fronzoli progressisti.">
     <meta property="og:image" content="generatore.jpg">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Pensiero Strategico del Generale">
-    <meta name="twitter:description" content="Una riflessione marziale e inattaccabile per la tua giornata.">
+    <meta name="twitter:title" content="Rapporto del Bracco Vanny">
+    <meta name="twitter:description" content="Ordine del giorno breve e inattaccabile.">
     <meta name="twitter:image" content="generatore.jpg">
 
     <!-- Favicon -->
@@ -24,11 +24,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;800&family=Plus+Jakarta+Sans:wght@600;800&display=swap" rel="stylesheet">
 
     <style>
         body {
-            background-color: #F4F1EA;
+            background-color: #ECE9E2;
             font-family: 'Plus Jakarta Sans', sans-serif;
         }
         .quote-font {
@@ -37,328 +37,31 @@
     </style>
 </head>
 
-<body class="min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 text-[#1C231E]">
+<body class="min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 text-[#1A251B]">
 
     <main class="max-w-xl w-full mx-auto my-auto flex flex-col items-center">
         
         <!-- Immagine di Copertina Adattabile -->
-        <div class="w-full max-w-xl mx-auto mb-6 rounded-2xl overflow-hidden shadow-md border border-[#C2B59B] flex justify-center bg-[#EFEBE0]">
+        <div class="w-full max-w-xl mx-auto mb-6 rounded-2xl overflow-hidden shadow-md border-2 border-[#8A9A86] flex justify-center bg-[#E5DFD3]">
             <img src="generatore.jpg" alt="Copertina" class="w-full h-auto max-h-80 object-contain block">
         </div>
 
         <!-- Box Frase Motivazionale -->
-        <div class="w-full bg-[#EFEBE0] rounded-3xl p-8 sm:p-12 shadow-lg border border-[#C2B59B] text-center relative mb-8">
-            <p id="quoteOutput" class="quote-font text-xl sm:text-3xl font-bold leading-relaxed text-[#2B382B] uppercase tracking-wide">
+        <div class="w-full bg-[#E5DFD3] rounded-3xl p-6 sm:p-10 shadow-lg border-2 border-[#8A9A86] text-center relative mb-8">
+            <p id="quoteOutput" class="quote-font text-lg sm:text-2xl font-bold leading-relaxed text-[#243324] uppercase tracking-wide">
                 "In attesa del rapporto tattico..."
             </p>
         </div>
 
         <!-- Pulsanti Azione -->
         <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
-            <button onclick="generateQuote()" class="flex-1 bg-[#2B382B] hover:bg-[#1C231E] text-white font-semibold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 flex items-center justify-center space-x-2">
+            <button onclick="generateQuote()" class="flex-1 bg-[#243324] hover:bg-[#1A251B] text-white font-extrabold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 flex items-center justify-center space-x-2">
                 <i class="fa-solid fa-rotate"></i>
-                <span>Nuovo Ordine del Giorno</span>
+                <span>ESIGHI ORDINE DEL GIORNO</span>
             </button>
 
-            <button onclick="shareQuote()" class="bg-[#D8D0BC] hover:bg-[#C2B59B] text-[#1C231E] font-semibold py-4 px-6 rounded-2xl transition-all active:scale-95 flex items-center justify-center space-x-2">
+            <button onclick="shareQuote()" class="bg-[#C8C0AC] hover:bg-[#B3A992] text-[#1A251B] font-extrabold py-4 px-6 rounded-2xl transition-all active:scale-95 flex items-center justify-center space-x-2">
                 <i class="fa-solid fa-share-nodes"></i>
-                <span>Divulga al Reparto</span>
+                <span>DIVULGA AL REPARTO</span>
             </button>
         </div>
-
-    </main>
-
-    <!-- Toast Notifica Copia -->
-    <div id="toast" class="fixed bottom-6 bg-[#1C231E] text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-xl transition-all duration-300 opacity-0 pointer-events-none">
-        Disaccio d'ordine copiato negli appunti!
-    </div>
-
-    <script>
-        const database = {
-            A: [
-                "Ieri mattina, osservando una pattuglia nei pressi della stazione di Bologna, ho chiaramente percepito che",
-                "Non serve aver frequentato l'Accademia Militare di Modena per comprendere immediatamente che",
-                "Mentre completavo una marcia tattica da quaranta chilometri con zaino affardellato, ho constatato che",
-                "Analizzando la palese degradazione del decoro urbano sotto le finestre della mia residenza, emerge che",
-                "Qualunque cittadino dotato di normale buon senso e patriottico vigore sa benissimo che",
-                "Passeggiando nei quartieri storici delle nostre metropoli ormai del tutto prive di presidio, appare chiaro che",
-                "Dall'alto della mia pluri-decennale esperienza al comando di reparti d'incursione, affermo che",
-                "A fronte del dilagare incontrollato di stravaganze ideologiche e teorie woke nelle nostre scuole, ribadisco che",
-                "Di fronte alla sistematica demolizione dei valori tradizionali e della famiglia naturale, è ovvio che",
-                "Osservando la proliferazione incontrollata di comitati arcobaleno e cattedre di fluidità di genere, è palese che",
-                "Mentre pattugliavo i confini nazionali per difendere la sovranità della Patria, ho maturato la certezza che",
-                "Senza dover disturbare i trattati di alta dottrina militare o gli annali di strategia, è solare che",
-                "Guardando gli argini dei nostri fiumi abbandonati al degrado e gli insediamenti abusivi, si deduce che",
-                "Di fronte all'incessante afflusso di clandestini senza arte né parte sulle nostre coste, riconosco che",
-                "Quando vedo la totale assenza di disciplina nelle nostre aule scolastiche e nei centri urbani, dichiaro che",
-                "A tutti coloro che promuovono l'annullamento delle identità nazionali in nome del politically correct, ricordo che",
-                "Dopo aver prestato servizio nelle missioni più ardue e nei teatri operativi più ostili, ho verificato che",
-                "Mentre eseguivo cinquanta flessioni sulle braccia prima del saporito rancio mattutino, è apparso palese che",
-                "Analizzando con freddo rigore logico e militare l'attuale permissivismo della magistratura, denuncio che",
-                "Osservando giovani sbandati che bivaccano sui monumenti dei nostri Caduti senza alcun rispetto, ribadisco che",
-                "Di fronte alla pretesa di imporre asterischi e schwa nella gloriosa lingua di Dante, confermo che",
-                "Nelle pieghe di una società ormai anestetizzata da salotti televisivi e conformismo progressista, sottolineo che",
-                "Senza cedere di un solo millimetro di fronte al fango mediatico orchestrato dai soliti radical chic, dichiaro che",
-                "Mentre il cittadino perbene viene sanzionato per un banale divieto di sosta, assistiamo al fatto che",
-                "A tutti i professori d'orchestra del pensiero unico che pontificano dal caldo dei loro attici, rispondo che",
-                "Analizzando la perdita della dignità nazionale sotto i colpi del mondialismo sradicato, affermo che",
-                "Quando si pretende di equiparare un'unione fluida alla sacralità della famiglia tradizionale, è evidente che",
-                "Riflettendo sulla gloriosa storia dei nostri Avi che hanno versato il sangue per la Patria, denuncio che",
-                "Mentre le forze dell'ordine si trovano con le mani legate da cavilli burocratici garantisti, è palese che",
-                "Invece di insegnare ai giovani il valore del dovere, del rispetto e dell'onore, assistiamo al fatto che",
-                "Di fronte ai continui episodi di microcriminalità e baby gang che terrorizzano i nostri quartieri, sostengo che",
-                "Mentre l'Europa ci impone la transizione ecologica e l'alimentazione a base di insetti, resta scolpito che",
-                "Guardando le nostre piazze trasformate in bivacchi a cielo aperto nell'inerzia totale, ribadisco che",
-                "Dall'analisi delle minacce ibride che attirano la nostra civiltà verso l'abisso del declino, sostengo che",
-                "Di fronte alla pretesa di abolire le festività cristiane per non urtare le sensibilità altrui, è palese che",
-                "Con la fermezza incrollabile che contraddistingue ogni soldato fedele al giuramento prestato, sottolineo che",
-                "Guardando l'ennesima manifestazione d'odio verso la bandiera tricolore e le nostre tradizioni, denuncio che",
-                "Quando si sostituisce la meritocrazia rigida con le quote inclusive di facciata, si dimostra chiaramente che",
-                "A tutti i professionisti dell'accoglienza indiscriminata che speculano sull'immigrazione clandestina, rispondo che",
-                "Nel solco tracciato dai padri fondatori e dai valori non negoziabili della nostra Civiltà, affermo che",
-                "Mentre i nostri pensionati faticano ad arrivare alla fine del mese con dignità, è inaccettabile che",
-                "Con la lucidità di chi ha comandato uomini in combattimento mantenendo il sangue freddo, ribadisco che",
-                "Di fronte alla propaganda gender che tenta di condizionare i nostri figli fin dalla prima infanzia, sostengo che",
-                "Mentre nei centri storici spariscono le botteghe tradizionali sostituite da bazar etnici abusivi, è solare che",
-                "A chiunque pretenda di riscrivere la storia italiana attraverso l'ottica della cancellazione culturale, rispondo che",
-                "Di fronte al collasso demografico derivante dalla svalutazione della figura della madre e del padre, riconosco che",
-                "Mentre si punisce il proprietario di casa che tenta di difendere la sua proprietà da occupanti abusivi, è palese che",
-                "Dall'esame obiettivo delle statistiche sulla sicurezza percepita e reale nelle nostre stazioni, confermo che",
-                "Quando si confonde la tolleranza con l'anarchia e l'assenza di regole condivise, emerge nettamente che",
-                "Con lo sguardo fermo di chi ha difeso i valori della Patria in ogni angolo del globo, dichiaro che",
-                "Di fronte all'arroganza delle elìte sovranazionali che vorrebbero cancellare i nostri confini, affermo che",
-                "Mentre si spendono risorse pubbliche per corsi di sensibilità di genere nel personale pubblico, è solare che",
-                "Nel momento in cui si smarrisce il senso del limite, del dovere e del sacrificio personale, si dimostra che",
-                "Senza tema di smentita e rifiutando categoricamente l'ipocrisia del bon ton politicamente corretto, sostengo che",
-                "Quando si assiste al proliferare di aggressioni ai danni del personale capotreno sulle tratte locali, è evidente che",
-                "A tutti i censori di professione che vorrebbero mettere il bavaglio al libero pensiero, ribadisco che",
-                "Di fronte alla trasformazione delle nostre città in enormi dormitori privi di identità e legalità, confermo che",
-                "Mentre si pretendono diritti senza mai adempiere a un singolo dovere civico o militare, è cristallino che",
-                "Con la tempra di chi non si è mai piegato davanti alle mode passeggere del momento, dichiaro che",
-                "Nel solco solido ed inossidabile del patriottismo più puro e privo di compromessi, affermo che"
-            ],
-            B: [
-                "la virile rigidezza dei nostri valori tradizionali non piegherà mai la testa al conformismo woke,",
-                "l'ostentazione di comportamenti che violano la decenza pubblica richiede un immediato ripristino dell'ordine,",
-                "la sicurezza del cittadino perbene richiede l'impiego risolutivo dei reparti d'incursione e della baionetta,",
-                "il concetto di patria, confini e sovranità non può essere diluito nel calderone del mondialismo fluidificato,",
-                "l'ideologia della fluidità sessuale costituisce una palese minaccia per la sopravvivenza della nostra specie,",
-                "la difesa dei confini sacri della Patria tollera zero concessioni all'immigrazione clandestina di massa,",
-                "l'esercito del politicamente corretto soffre di un'incurabile carenza di testosterone e spirito di servizio,",
-                "la presenza di insediamenti abusivi ed etnici viola frontalmente le basilari norme del codice di marcia,",
-                "il lavaggio del cervello perpetrato dalla teoria gender va neutralizzato con disciplina e rigore spartano,",
-                "l'ordine pubblico ed il rispetto delle divise rappresentano i pilastri inamovibili della nostra civiltà,",
-                "la famiglia naturale composta esclusivamente da padre e madre non è un'opzione negoziabile,",
-                "le nostre città sono state trasformate in giungle urbane dal buonismo permissivo dei garantisti,",
-                "l'ostentazione dell'omosessualità come norma sociale infrange la naturale architettura del genere umano,",
-                "l'invasione programmata attraverso i barconi va bloccata mediante blocco navale e fermezza militare,",
-                "il patriottismo non è una colpa da espiare ma un dovere morale da rivendicare a testa alta,",
-                "l'ossessione per il linguaggio inclusivo rappresenta il punto più basso del declino culturale occidentale,",
-                "la legittima difesa dentro la propria casa deve essere sacra, inviolabile e senza limiti burocratici,",
-                "il concetto di dovere, rispetto ed obbedienza è stato deliziosamente rottamato da decenni di lassismo,",
-                "l'italianità autentica non si svende nei mercatini dell'accoglienza indiscriminata e senza controllo,",
-                "il presidio armato del territorio è l'unica risposta efficace contro il degrado e lo spaccio di piazza,",
-                "la cancel culture è un'aberrazione liberticida promossa da elìte viziate privo di esperienza sul campo,",
-                "i confini di una nazione si difendono con la forza delle armi e non con i salotti d'accoglienza,",
-                "la figura del vero guerriero ed autorevole capofamiglia non sarà mai sostituita dal modello fluido,",
-                "l'Islamizzazione strisciante delle nostre periferie mina le radici giudaico-cristiane dell'Europa,",
-                "l'ostentazione delle proprie preferenze intime deve rimanere chiusa tra le mura domestiche,",
-                "la certezza della pena è l'unica cura contro chi aggredisce le forze dell'ordine durante il servizio,",
-                "l'identità biologica maschile e femminile è scolpita nella natura e non nelle teorie sociologiche,",
-                "il buonismo ipocrita della sinistra caviale ha spalancato le porte all'anarchia nelle nostre stazioni,",
-                "il rispetto della bandiera tricolore viene prima di qualsiasi pretesa minoritaria o progressista,",
-                "l'ordine, la gerarchia ed la disciplina sono i valori che hanno fatto grande la nostra Civiltà,",
-                "l'accoglienza a porte aperte ha trasformato i nostri quartieri in dormitori di microcriminalità spietata,",
-                "la propaganda arcobaleno nelle scuole primarie è un atto di vero e proprio condizionamento ideologico,",
-                "la sacralità del diritto di proprietà privata non può cedere di fronte agli squatter ed occupanti,",
-                "il maschio alpha non deve vergognarsi della propria natura virile, forte e protettiva,",
-                "la sostituzione etnica e culturale in atto è il risultato di scelte politiche scellerate e suicide,",
-                "la tolleranza zero contro chi imbratta i nostri monumenti storici deve essere applicata con durezza,",
-                "le radici della nostra Patria sono intrise di tradizioni secolari e non di mode passeggere d'oltremare,",
-                "l'arroganza delle lobby LGBTQ+ pretende di riscrivere il codice genetico e morale della società,",
-                "il decoro delle nostre piazze richiede il ripristino della leva militare obbligatoria per i giovani,",
-                "la difesa della propria terra è un diritto naturale che precede qualsiasi cavillo giuridico sovranazionale,",
-                "l'ideologia ecologista ed il cibo sintetico sono solo strumenti di controllo delle elìte mondialiste,",
-                "la figura del padre deve tornare ad essere pilastro di autorità indiscusso nella crescita dei figli,",
-                "l'inviolabilità del suolo patrio impone l'impiego immediato dei reparti speciali della Difesa,",
-                "il finto garantismo della giustizia protegge i delinquenti e penalizza i cittadini perbene,",
-                "la tradizione romana e cristiana dell'Europa non cederà all'avanzata del multiculturalismo,",
-                "il rispetto assoluto per i simboli della Patria non può essere oggetto di dibattito accademico,",
-                "la debolezza dimostrata di fronte alle occupazioni abusive mina le fondamenta dello Stato di Diritto,",
-                "l'identità di un popolo si protegge con l'orgoglio, con le radici e con la fermezza del comando,",
-                "le deviazioni dalla legge naturale non diventeranno mai dogma di stato con il nostro consenso,",
-                "la sicurezza dei nostri figli richiede la bonifica immediata di ogni piazza di spaccio cittadina,",
-                "l'ideologia woke è una tossina culturale progettata per indebolire le nazioni sovrane,",
-                "la dignità del popolo italiano non si baratta con le direttive oppressive della burocrazia europea,",
-                "il rigore spartano è l'unica medicina efficace contro la decadenza dei costumi contemporanei,",
-                "la tutela delle nostre donne e dei nostri anziani richiede pattugliamenti d'area senza sosta,",
-                "l'amore per la Patria si dimostra sul campo di battaglia e non con i post sui social network,",
-                "l'ordine naturale delle cose non sarà mai sovvertito da una minoranza rumorosa e viziosa,",
-                "la protezione dei nostri confini marittimi è un dovere costituzionale ineludibile e primario,",
-                "il valore della patria e dell'onore non si negozia nei salotti della politica politicante,",
-                "la disciplina militare nelle scuole restituirebbe dignità, rispetto e spina dorsale ai giovani,",
-                "l'orgoglio di appartenere alla civiltà italica deve tornare ad essere motivo di vanto nazionale,"
-            ],
-            C: [
-                "e quindi si rende necessario ed urgente",
-                "motivo per cui ordino categoricamente di",
-                "pertanto invito la cittadinanza sana a",
-                "e di conseguenza qualsiasi comandante degno del nome deve",
-                "ragion per cui non esiterò mai a",
-                "e dunque l'unica manovra tattica praticabile è",
-                "esigo pertanto dal governo una svolta che sappia",
-                "e quindi con il rigore del vero patriota bisogna",
-                "pertanto senza indugio né pietà dobbiamo",
-                "motivo per cui è arrivato il momento di",
-                "e chi non comprende questa verità solare farebbe meglio a",
-                "pertanto contro le aggressioni del politicamente corretto occorre",
-                "ragion per cui sul fronte della legalità dobbiamo immediatamente",
-                "e quindi senza cedere alle sirene del buonismo dobbiamo",
-                "pertanto per salvaguardare la nostra civiltà occorre",
-                "motivo per cui di fronte alle pretese woke bisogna subito",
-                "e dunque per ripristinare il rispetto delle istituzioni occorre",
-                "pertanto con la fermezza che si addice ad un popolo guerriero bisogna",
-                "ragion per cui di fronte al degrado delle nostre città dobbiamo",
-                "e quindi senza troppi tatticismi da salotto occorre",
-                "pertanto con spirito di corpo e disciplina incrollabile dobbiamo",
-                "motivo per cui rifiutando le imposizioni di Bruxelles occorre",
-                "e dunque per proteggere i nostri figli ed il loro futuro bisogna",
-                "pertanto per bonificare il paese dal lassismo morale occorre",
-                "ragion per cui con la forza della ragione e del diritto dobbiamo",
-                "e quindi contro l'invasione clandestina programmata bisogna",
-                "pertanto per riaffermare la sacralità della famiglia naturale occorre",
-                "motivo per cui di fronte alle pagliacciate dei comitati arcobaleno bisogna",
-                "e dunque per restituire sicurezza ai nostri quartieri dobbiamo",
-                "pertanto senza alcuna vergogna o complesso d'inferiorità dobbiamo",
-                "ragion per cui contro la demolizione delle nostre tradizioni occorre",
-                "e quindi per tutelare i confini sacri della Nazione bisogna",
-                "pertanto rifiutando il linguaggio della fluidità ideologica dobbiamo",
-                "motivo per cui di fronte alla decadenza dei costumi occorre",
-                "e dunque per difendere il diritto alla legittima difesa dobbiamo",
-                "pertanto con il coraggio tipico di chi ha servito la Patria occorre",
-                "ragion per cui contro l'arroganza delle minoranze rumorose dobbiamo",
-                "e quindi per spezzare le catene del conformismo mondialista bisogna",
-                "pertanto per ristabilire la gerarchia ed il rispetto dei ruoli occorre",
-                "motivo per cui di fronte all'avanzata dell'anarchia urbana dobbiamo",
-                "e dunque per garantire la sopravvivenza della nostra cultura occorre",
-                "pertanto senza farsi intimidire dalle campagne d'odio mediatiche dobbiamo",
-                "ragion per cui per riconquistare la sovranità nazionale occorre",
-                "e quindi contro la criminalità dilagante nelle stazioni bisogna",
-                "pertanto per riaffermare il valore dell'identità biologica dobbiamo",
-                "motivo per cui di fronte ai tentativi di riscrittura della storia occorre",
-                "e dunque per proteggere i lavoratori perbene dalle occupazioni abusive dobbiamo",
-                "pertanto con la prontezza di riflessi di un reparto d'assalto dobbiamo",
-                "ragion per cui contro la femminilizzazione della società occorre",
-                "e quindi per ripristinare l'onore del Tricolore bisogna subito",
-                "pertanto rifiutando il cibo sintetico e le follie green dobbiamo",
-                "motivo per cui per ridare spina dorsale alle giovani generazioni occorre",
-                "e dunque per arginare l'islamizzazione strisciante delle periferie dobbiamo",
-                "pertanto con il cameratismo ed il valore dei veri patrioti occorre",
-                "ragion per cui per fermare la speculazione dell'accoglienza bisogna",
-                "e quindi contro la dittatura del pensiero unico progressista dobbiamo",
-                "pertanto per ristabilire la legge ed il decoro sul suolo patrio occorre",
-                "motivo per cui di fronte alle pretese della burocrazia europea bisogna",
-                "e dunque per far valere il buonsenso ed il diritto naturale dobbiamo",
-                "pertanto con passo marziale ed il cuore saldo nella tradizione occorre"
-            ],
-            D: [
-                "sguainare la baionetta del buonsenso e bonificare immediatamente l'area.",
-                "schierare le forze armate a difesa dell'ordine e della legalità.",
-                "inviare i reparti d'incursione per ripristinare il decoro urbano.",
-                "rispondere con marziale fermezza a qualsiasi provocazione progressista.",
-                "ripristinare la leva obbligatoria per forgiare il carattere dei giovani.",
-                "espellere senza indugio ogni clandestino presente sul territorio patrio.",
-                "difendere la famiglia tradizionale con lo scudo della nostra Civiltà.",
-                "applicare il blocco navale immediato per sigillare le frontiere marittime.",
-                "restituire il manganello ed la piena autorità operativa alle Forze dell'Ordine.",
-                "cancellare qualsiasi traccia di ideologia woke dai testi scolastici.",
-                "spazzare via le velleità arcobaleno con il soffio della legge naturale.",
-                "difendere il sacro suolo della Patria senza cedere neanche un millimetro.",
-                "rispedire al mittente le follie mondialiste e le direttive europee.",
-                "mettere fuori legge qualsiasi associazione che promuova la teoria gender.",
-                "bonificare le stazioni ed i centri urbani dalla microcriminalità straniera.",
-                "riaffermare il valore della virilità, del dovere e dell'onore nazionale.",
-                "sgomberare con la forza ogni singola casa occupata da squatter abusivi.",
-                "silenziare i soloni del politically correct con la verità dei fatti.",
-                "proteggere le nostre radici cristiane e la nostra identità millenaria.",
-                "dare campo libero alla legittima difesa di ogni cittadino dentro casa.",
-                "imporre la tolleranza zero verso chi insulta la bandiera e le divise.",
-                "riportare la disciplina rigida e la bocciatura punitiva nelle aule.",
-                "chiudere immediatamente i centri d'accoglienza gestiti da cooperative rosse.",
-                "restituire al padre di famiglia la sua autorità naturale e patriarcale.",
-                "insegnare ai giovani a marciare dritti invece di lamentarsi sui social.",
-                "erigere un muro insuperabile a difesa della sovranità della Nazione.",
-                "punire con il carcere duro chi imbratta i monumenti dei nostri Caduti.",
-                "eliminare ogni asterisco ed abominio linguistico dagli atti ufficiali.",
-                "restituire dignità, decoro e sicurezza a tutte le piazze d'Italia.",
-                "sostenere la natalità italiana contro il declino demografico programmato.",
-                "rispettare la gerarchia militare ed i valori incrollabili della Patria.",
-                "neutralizzare la propaganda della fluidità prima che distrugga la società.",
-                "proteggere la produzione agricola italiana dal cibo sintetico e dagli insetti.",
-                "garantire la certezza assoluta della pena senza sconti o benefici concessi.",
-                "erogare punizioni esemplari a chiunque aggredisca un capotreno o un poliziotto.",
-                "spezzare l'egemonia culturale della sinistra nei salotti e nei media.",
-                "riaffermare che l'Italia appartiene agli italiani che lavorano e rispettano la legge.",
-                "spianare la strada al ritorno del merito, del sacrificio e del dovere.",
-                "estirpare la piaga dello spaccio di droga con perlustrazioni a tappeto.",
-                "fermare l'Islamizzazione e difendere le festività della nostra tradizione.",
-                "mantenere la rotta dritta come una spada senza mai curvarsi al buonismo.",
-                "cacciare dai ruoli educativi chiunque promuova il lavaggio del cervello gender.",
-                "restaurare la maestà dello Stato contro il caos e la delinquenza di strada.",
-                "difendere la proprietà privata come un santuario inviolabile ed assoluto.",
-                "far rispettare il Codice di Marcia a chiunque pretenda di risiedere in Italia.",
-                "sostituire i salotti radical chic con la concretezza dell'addestramento militare.",
-                "tutelare i nostri nonni e le nostre donne dalla violenza dei predoni urbani.",
-                "ripristinare il saluto alla Bandiera ogni mattina nelle scuole del Regno.",
-                "esaltare la gloria della nostra storia contro la vergogna della cancel culture.",
-                "infrangere i dogma del mondialismo con la forza d'urto del patriottismo.",
-                "blindare le tratte ferroviarie locali con pattuglie d'assalto armate.",
-                "insegnare il rispetto per gli anziani, per i maestri e per le Autorità.",
-                "rigettare le quote rosa e fluide in favore della pura competenza sul campo.",
-                "riconquistare ogni centimetro di territorio nazionale ceduto al degrado.",
-                "forgiare una generazione di guerrieri pronti a servire la Nazione.",
-                "combattere la criminalità etnica con la massima fermezza consentita dalla legge.",
-                "restituire orgoglio, vigore e fierezza a tutto il Popolo Italiano.",
-                "mantenere il sangue freddo davanti agli attacchi dei giornalisti servili.",
-                "alzare la testa di fronte alle ingerenze dei tribunali internazionali.",
-                "marciare compatti verso la vittoria della Civiltà e della Tradizione."
-            ]
-        };
-
-        let currentText = "";
-
-        function generateQuote() {
-            const a = database.A[Math.floor(Math.random() * database.A.length)];
-            const b = database.B[Math.floor(Math.random() * database.B.length)];
-            const c = database.C[Math.floor(Math.random() * database.C.length)];
-            const d = database.D[Math.floor(Math.random() * database.D.length)];
-
-            currentText = `${a} ${b} ${c} ${d}`;
-            document.getElementById('quoteOutput').textContent = `"${currentText}"`;
-        }
-
-        function shareQuote() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Pensiero Strategico del Generale',
-                    text: `"${currentText}"`
-                }).catch(() => {});
-            } else {
-                navigator.clipboard.writeText(`"${currentText}"`).then(() => {
-                    showToast();
-                });
-            }
-        }
-
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none');
-            }, 2500);
-        }
-
-        window.onload = generateQuote;
-    </script>
-</body>
-</html>
