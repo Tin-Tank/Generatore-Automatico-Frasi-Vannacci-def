@@ -7,13 +7,13 @@
 
     <!-- Meta tag per anteprima Social (Open Graph & Twitter) -->
     <meta property="og:title" content="Pensiero Strategico del Bracco Vanny">
-    <meta property="og:description" content="Rapporto tattico immediato, privo di fronzoli progressisti.">
+    <meta property="og:description" content="Ordine tattico ultrabreve, privo di fronzoli progressisti.">
     <meta property="og:image" content="generatore.jpg">
     <meta property="og:type" content="website">
 
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Rapporto del Bracco Vanny">
-    <meta name="twitter:description" content="Ordine del giorno breve e inattaccabile.">
+    <meta name="twitter:description" content="Slogan d'assalto inattaccabile.">
     <meta name="twitter:image" content="generatore.jpg">
 
     <!-- Favicon -->
@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700;900&family=Plus+Jakarta+Sans:wght@700;900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@800;900&family=Plus+Jakarta+Sans:wght@700;900&display=swap" rel="stylesheet">
 
     <style>
         body {
@@ -48,8 +48,8 @@
 
         <!-- Box Frase Motivazionale -->
         <div class="w-full bg-[#E5DFD3] rounded-3xl p-6 sm:p-10 shadow-lg border-2 border-[#8A9A86] text-center relative mb-8">
-            <p id="quoteOutput" class="quote-font text-xl sm:text-3xl font-extrabold leading-tight text-[#243324] uppercase tracking-wider">
-                "IN ATTESA DEL RAPPORTO TATTICO..."
+            <p id="quoteOutput" class="quote-font text-2xl sm:text-4xl font-black leading-tight text-[#243324] uppercase tracking-wider">
+                "IN ATTESA DELL'ORDINE..."
             </p>
         </div>
 
@@ -69,176 +69,4 @@
     </main>
 
     <!-- Toast Notifica Copia -->
-    <div id="toast" class="fixed bottom-6 bg-[#1A251B] text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-xl transition-all duration-300 opacity-0 pointer-events-none">
-        DISPACCIO COPIATO NEGLI APPUNTI!
-    </div>
-
-    <script>
-        const database = {
-            A: [
-                "Patto di acciaio:",
-                "Ruggito di motore e muscoli:",
-                "Flessioni all'alba e poi:",
-                "Basta parole molli:",
-                "In trincea non si piange:",
-                "Marciare dritti e scolpiti:",
-                "Niente asterischi o piagnistei:",
-                "Fronte alto e petto in fuori:",
-                "Il metallo non mente:",
-                "Fuoco, sudore e disciplina:",
-                "Zero burocrazia, solo forza:",
-                "Il maschio vero non chiede scusa:",
-                "Basta fuffa da salotto:",
-                "Mano di ferro sulla città:",
-                "Spina dorsale di granito:",
-                "La trincea chiama:",
-                "Guerrieri, non filosofi:",
-                "Vite d'acciaio contro il degrado:",
-                "Colpo secco ed incisivo:",
-                "Muscoli tesi, mente fredda:",
-                "Guerra aperta alla flaccidità:",
-                "Pugno chiuso e passo serrato:",
-                "Via i fluidi, dentro il rigore:",
-                "Schiaffo morale al politically correct:",
-                "Sguardo d'aquila e dritto al punto:",
-                "Sangue, testosterone ed onore:",
-                "Carica frontale senza freni:",
-                "Rompere le righe della fuffa:",
-                "L'Accademia insegna:",
-                "Raffica di volontà pura:"
-            ],
-            B: [
-                "distruggere la molliccezza woke,",
-                "spezzare le catene del buonismo,",
-                "piallare la decadenza urbana,",
-                "strigliare i rammolliti da tastiera,",
-                "caricare a testa bassa senza paura,",
-                "militarizzare i quartieri sbandati,",
-                "spazzare via le teorie fluidificate,",
-                "asfaltare il piagnisteo progressista,",
-                "radere al suolo l'anarchia di piazza,",
-                "blindare i confini col pugno d'acciaio,",
-                "demolire i salotti dei radical chic,",
-                "imporre il dovere senza sconti,",
-                "bonificare le stazioni col fuoco,",
-                "schiacciare la fuffa mondialista,",
-                "sradicare le fobie della debolezza,",
-                "annientare il permissivismo dilagante,",
-                "restituire il manganello alla legge,",
-                "cancellare gli abomini linguistici,",
-                "forgiare uomini di bronzo e volontà,",
-                "scacciare i parassiti della patria,",
-                "rispedire al mittente ogni clandestino,",
-                "bruciare la cancel culture sul campo,",
-                "esaltare la spada del patriottismo,",
-                "sgomberare gli abusivi col metodo d'urto,",
-                "reintrodurre la leva ad ogni costo,",
-                "polverizzare le quote inclusive,",
-                "difendere la terra col sangue,",
-                "punire senza pietà gli imbrattatori,",
-                "affondare i barconi dell'illegalità,",
-                "ripristinare l'ordine spartano subito,"
-            ],
-            C: [
-                "senza se e senza ma:",
-                "e marciare veloci:",
-                "ORDINE IMMEDIATO:",
-                "con la forza del metallo:",
-                "AVANTI TUTTA:",
-                "zero scuse, solo fatti:",
-                "col pugno di ferro:",
-                "AZIONI, NON CHIACCHIERE:",
-                "senza chiedere il permesso:",
-                "SOPPRESSIONE TOTALE:",
-                "con marziale brutalità:",
-                "DIRETTA CONQUISTA:",
-                "spezzare la linea nemica:",
-                "SUBITO SUL CAMPO:",
-                "puro spirito guerriero:",
-                "BOCCIARE OGNI DEBOLEZZA:",
-                "farsi strada col fuoco:",
-                "CARICA A FONDO:",
-                "nessun compromesso:",
-                "DISCIPLINA SPARTANA:",
-                "a passo di carica:",
-                "VINCERE ED IMPORSI:",
-                "strigliare i vigliacchi:",
-                "PRESIDIO ARMATO:",
-                "spazzare il campo:",
-                "BAIONETTA IN CANNA:",
-                "colpisci duro e dritto:",
-                "FUMATA NERA AI DEBOLI:",
-                "spegnere le proteste:",
-                "VIRTÙ E FERMEZZA:"
-            ],
-            D: [
-                "CARICARE!",
-                "BONIFICARE!",
-                "MARCIARE!",
-                "SCOMMETTERE SUL METALLO!",
-                "BLINDARE TUTTO!",
-                "SPEZZARE LE RIGHE!",
-                "NON RETROCEDERE!",
-                "TIRARE DRITTO!",
-                "Schiacciare il nemico!",
-                "Zero pietà per i deboli!",
-                "Sgomberare e pulire!",
-                "Forzare il blocco navale!",
-                "Ristabilire il terrore della legge!",
-                "Abatuffolare la fuffa!",
-                "Riconquistare ogni metro!",
-                "Flessioni fino allo sfinimento!",
-                "Abolire il piagnisteo!",
-                "Restaurare l'Impero!",
-                "Pugno di ferro e vittoria!",
-                "Cacciare i predoni!",
-                "Forzare la trincea!",
-                "Leva obbligatoria per tutti!",
-                "In alto i cuori ed i muscoli!",
-                "Distruggere l'asterisco!",
-                "Iscrivere il merito nel marmo!",
-                "Fuoco sulla decadenza!",
-                "Nessun passo indietro!",
-                "Spazzare l'anarchia!",
-                "Forza, onore e marcia!",
-                "VITTORIA INCONDIZIONATA!"
-            ]
-        };
-
-        let currentText = "";
-
-        function generateQuote() {
-            const a = database.A[Math.floor(Math.random() * database.A.length)];
-            const b = database.B[Math.floor(Math.random() * database.B.length)];
-            const c = database.C[Math.floor(Math.random() * database.C.length)];
-            const d = database.D[Math.floor(Math.random() * database.D.length)];
-
-            currentText = `${a} ${b} ${c} ${d}`;
-            document.getElementById('quoteOutput').textContent = `"${currentText}"`;
-        }
-
-        function shareQuote() {
-            if (navigator.share) {
-                navigator.share({
-                    title: 'Ordine d\'assalto del Bracco Vanny',
-                    text: `"${currentText}"`
-                }).catch(() => {});
-            } else {
-                navigator.clipboard.writeText(`"${currentText}"`).then(() => {
-                    showToast();
-                });
-            }
-        }
-
-        function showToast() {
-            const toast = document.getElementById('toast');
-            toast.classList.remove('opacity-0', 'pointer-events-none');
-            setTimeout(() => {
-                toast.classList.add('opacity-0', 'pointer-events-none');
-            }, 2500);
-        }
-
-        window.onload = generateQuote;
-    </script>
-</body>
-</html>
+    <div id="toast" class="fixed bottom-6 bg-[#1A251B] text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-xl transition-all duration-300 opacity-0 pointer-events-
