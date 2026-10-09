@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pensiero Motivazionale</title>
+
+    <!-- Meta tag per anteprima Social (Open Graph & Twitter) -->
+    <meta property="og:title" content="Pensiero Motivazionale">
+    <meta property="og:description" content="Una frase motivazionale per la tua giornata.">
+    <meta property="og:image" content="generatore.jpg">
+    <meta property="og:type" content="website">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Pensiero Motivazionale">
+    <meta name="twitter:description" content="Una frase motivazionale per la tua giornata.">
+    <meta name="twitter:image" content="generatore.jpg">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/jpeg" href="generatore.jpg">
+
+    <!-- Fogli di stile esterni -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,500;1,600&family=Plus+Jakarta+Sans:wght@500;600&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            background-color: #FAF4ED;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .quote-font {
+            font-family: 'Cormorant Garamond', serif;
+        }
+    </style>
+</head>
+
+<body class="min-h-screen flex flex-col justify-center items-center p-4 sm:p-6 text-[#28150B]">
+
+    <main class="max-w-xl w-full mx-auto my-auto flex flex-col items-center">
+        
+        <!-- Immagine di Copertina Adattabile -->
+        <div class="w-full max-w-xl mx-auto mb-6 rounded-2xl overflow-hidden shadow-md border border-[#E2CBAD] flex justify-center bg-[#FDFBF7]">
+            <img src="generatore.jpg" alt="Copertina" class="w-full h-auto max-h-80 object-contain block">
+        </div>
+
+        <!-- Box Frase Motivazionale -->
+        <div class="w-full bg-[#FDFBF7] rounded-3xl p-8 sm:p-12 shadow-lg border border-[#E2CBAD]/80 text-center relative mb-8">
+            <p id="quoteOutput" class="quote-font italic text-2xl sm:text-4xl font-medium leading-relaxed text-[#28150B]">
+                "Caricamento..."
+            </p>
+        </div>
+
+        <!-- Pulsanti Azione -->
+        <div class="flex flex-col sm:flex-row gap-4 w-full justify-center">
+            <button onclick="generateQuote()" class="flex-1 bg-[#BE4B2A] hover:bg-[#8A5833] text-white font-semibold py-4 px-6 rounded-2xl shadow-md transition-all active:scale-95 flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-rotate"></i>
+                <span>Nuova Frase</span>
+            </button>
+
+            <button onclick="shareQuote()" class="bg-[#F2E5D5] hover:bg-[#E2CBAD] text-[#4A2B18] font-semibold py-4 px-6 rounded-2xl transition-all active:scale-95 flex items-center justify-center space-x-2">
+                <i class="fa-solid fa-share-nodes"></i>
+                <span>Condividi</span>
+            </button>
+        </div>
+
+    </main>
+
+    <!-- Toast Notifica Copia -->
+    <div id="toast" class="fixed bottom-6 bg-[#28150B] text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-xl transition-all duration-300 opacity-0 pointer-events-none">
+        Frase copiata negli appunti!
+    </div>
+
+    <script>
+        const database = {
+            A: [
+                "Guardi il caffè e capisci che",
+                "Prendi l'autobus delle 8 e senti che",
+                "Cerchi le chiavi nella giacca e ritrovi",
+                "Basta un biscotto inzuppato male per intuire che",
+                "La pioggia di martedì ti ricorda che",
+                "Guardando la brioche al banco capisci che",
+                "In fila alle poste capisci subito che",
+                "Sistemandoti la sciarpa realizzi che",
+                "Quando vedi l'estratto conto intuisci che",
+                "Davanti al frigorifero aperto alle due di notte capisci che",
+                "Vedendo la gente correre sotto la pioggia capisci che",
+                "Mentre aspetti il verde al semaforo ti accorgi che",
+                "Slacciandoti le scarpe la sera capisci che",
+                "Guardando il gatto che dorme sul divano ti rendi conto che",
+                "Quando ti cade il gelato a terra capisci che",
+                "Apri la finestra la mattina e capisci che",
+                "Trovando uno scontrino vecchio in tasca scopri che",
+                "Quando ti viene la febbre nel weekend capisci che",
+                "Mentre aspetti che la moka salga scopri che",
+                "Guardando il traffico dalla finestra capisci che",
+                "Ti svegli alle 6 con grandi propositi e poi ricordi che",
+                "Compri una pianta verde per dare svolta alla casa e capisci che",
+                "Guardi le storie degli altri su Instagram e capisci subito che",
+                "Accendi la tv per rilassarti e ti accorgi che",
+                "Provi a fare ginnastica di mattina e capisci che",
+                "Metti in ordine la scrivania e scopri che",
+                "Paghi la cena con il bancomat e realizzi che",
+                "Ti metti la camicia buona la mattina e scopri che",
+                "Pianifichi tutta la settimana nei minimi dettagli e ti accorgi che",
+                "Quando cerchi di fare la cosa giusta al momento giusto capisci che",
+                "Sentendo l'odore del ragù della domenica capisci che",
+                "Rileggendo le tue vecchie chat di tre anni fa capisci che",
+                "Quando provi a spiegare le tue ragioni con pazienza scopri che",
+                "Guardando un tramonto da solo sulla panchina capisci che",
+                "Entrando in palestra con tutto il kit nuovo realizzi che",
+                "Cercando di capire dove hai sbagliato scopri che",
+                "Quando ascolti il vocale di quattro minuti della tua amica capisci che",
+                "Guardando l'ennesimo tutorial di crescita personale scopri che",
+                "Pensa che bello se ogni tanto la vita ti avvisasse prima di",
+                "Quando provi a fare il simpatico con la cassiera capisci che",
+                "Sentendo la pioggia battere sui vetri mentre sei sotto le coperte intuisci che",
+                "Togliendo l'etichetta al maglione nuovo scopri subito che",
+                "Guardando la tazza vuota sul comodino capisci che",
+                "Mentre cerchi di fare un bel respiro profondo per rilassarti ti accorgi che",
+                "Riguardando le foto delle vacanze di cinque anni fa ti rendi conto che",
+                "Quando sorridi a uno sconosciuto per strada e lui guarda da un'altra parte capisci che",
+                "Sentendo il profumo di pane appena sfornato la mattina intuisci che",
+                "Apri l'armadio pieno di vestiti e capisci improvvisamente che",
+                "Quando lasci scorrere l'acqua calda della doccia sulla schiena scopri che",
+                "Riascoltando la tua canzone preferita delle superiori ti rendi conto che",
+                "Mentre versi l'olio nella padella calda intuisci che",
+                "Guardando le foglie secche che volano sul marciapiede capisci che",
+                "Quando provi a sistemarti i capelli davanti allo specchio dell'ascensore scopri che",
+                "Sentendo le campane suonare la domenica mattina ti accorgi che",
+                "Mentre aspetti il tuo turno dal dentista intuisci che",
+                "Apri una busta della posta con scritto 'importante' e capisci che",
+                "Guardando il riflesso della luna nelle pozzanghere scopri che",
+                "Quando provi a mettere ordine nei tuoi pensieri ti accorgi che",
+                "Mentre stendi il bucato sul balcone al tramonto capisci che",
+                "Sorseggiando un bicchiere d'acqua a mezzanotte scopri che"
+            ],
+            B: [
+                "il segreto è vivere ogni giorno come se fosse l'ultimo, il che spiega perché sei pieno di debiti,",
+                "siamo fatti di sogni bellissimi e di una pigrizia assolutamente devastante,",
+                "gli abbracci più veri sono scalda-cuore, ma purtroppo non pagano la bolletta della luce,",
+                "la felicità è dentro di te, ma è nascosta così male che ormai si è persa,",
+                "cambiare strada serve ad aprire nuovi orizzonti, oppure a finire dritti in un fosso,",
+                "le cose migliori arrivano quando smetti di cercare, ovvero quando ormai non ti servono più,",
+                "il destino ti sorride con grande calore, ma ha un senso dell'umorismo davvero perverso,",
+                "l'amore vero supera qualsiasi ostacolo, tranne la gestione del conto corrente condiviso,",
+                "imparare a perdonarsi è un percorso spirituale meraviglioso per giustificare le proprie cavolate,",
+                "la vita è un viaggio affascinante, ma la prima classe costa troppo e in seconda si viaggia malissimo,",
+                "certi silenzi dicono tantissimo, principalmente che la gente si è stancata di ascoltarti,",
+                "i sogni sono il motore dell'anima, finché non suona la sveglia e devi andare a fatturare,",
+                "non puoi piacere a tutti nella vita, anche perché a molti fai proprio innervosire,",
+                "la speranza è una luce nell'oscurità, ma le batterie sono quasi del tutto scariche,",
+                "se continui a guardare indietro finisci per scontrarti contro un palo della luce,",
+                "se oggi tutto sembra scorrere liscio, è solo perché non ti sei ancora accorto del disastro,",
+                "il tempo rimargina ogni ferita, ma lascia rughe indelebili e conti da saldare,",
+                "le esperienze passate ti rendono più forte, ma anche nettamente più insopportabile,",
+                "bisogna imparare a dire di no alla gente, se non altro per il gusto di rovinar loro i piani,",
+                "la calma è la virtù dei forti e di quelli che non hanno minimamente capito cosa sta succedendo,",
+                "hai un potenziale enorme e inespresso dentro di te, e lì rimarrà per sempre stoccato,",
+                "la tua zona di comfort è un posto magnifico dove marcire in tutta tranquillità,",
+                "l'universo ha un grande disegno per te, ma purtroppo fa veramente schifo a disegnare,",
+                "inseguire le proprie passioni è un'idea poetica che finisce regolarmente sul lastrico,",
+                "dagli errori si impara sempre qualcosa, per esempio a farne di molto più costosi,",
+                "il pensiero positivo cambia le prospettive, ma non ha mai pagato un solo mese di affitto,",
+                "sei una persona unica e speciale nel mondo, esattamente come altri otto miliardi di individui,",
+                "il futuro ti riserva grandi sorprese, quasi tutte estremamente fastidiose,",
+                "riflettere a fondo sui tuoi problemi ti aiuta soltanto a farti venire un gran mal di testa,",
+                "il bicchiere non è mezzo pieno né mezzo vuoto, è semplicemente da lavare da tre giorni,",
+                "la maturità è la straordinaria capacità di fare le stesse sciocchezze con un'aria più seria,",
+                "volere è potere, ma anche lasciar perdere subito è una scelta di vita dignitosissima,",
+                "i tempi migliori devono ancora venire, e infatti stanno facendo un ritardo spaventoso,",
+                "la saggezza arriva con l'età, ma spesso l'età si presenta del tutto da sola,",
+                "quando tocchi il fondo puoi sempre iniziare a scavare per cercare il peggio,",
+                "il successo è dietro l'angolo, ma l'angolo è sulla mappa sbagliata,",
+                "l'esperienza non è altro che la somma di tutte le figuracce che hai collezionato,",
+                "l'ottimismo è soltanto una temporanea e colpevole mancanza di informazioni corrette,",
+                "se l'opportunità non bussa alla tua porta, probabilmente ha visto chi c'era dentro e ha tirato dritto,",
+                "la costanza è fondamentale nella vita, soprattutto quando decidi di rinunciare a tutto,",
+                "l'universo ascolta i tuoi desideri più profondi e li ignora con olimpica serenità,",
+                "il coraggio ti permette di fare grandi cose, ma la prudenza ti evita di figurare da sprovveduto,",
+                "ascoltare la propria voce interiore è fantastico, se solo non dicesse costantemente assurdità,",
+                "il destino mescola le carte della vita, ma tu continui a giocare con le fiches finte,",
+                "la poesia del quotidiano è bellissima, finché non devi fare la lavatrice,",
+                "ogni giorno è un foglio bianco da scrivere, ma tu hai finito l'inchiostro,",
+                "guardare avanti ti riempie di speranza, finché non vedi i prezzi del carburante,",
+                "l'empatia ti connette con gli altri, il che ti fa capire quanto siano insopportabili,",
+                "l'universo cospira a tuo favore, ma evidentemente la cospirazione è fallita,",
+                "la vita ti offre continuamente nuove occasioni, e tu continui a rifiutare i cookie,",
+                "la felicità sta nelle piccole cose, il che è un'ottima scusa per accontentarsi della miseria,",
+                "credere in se stessi è il primo passo, ma anche cadere dal secondo non è male,",
+                "la pazienza è la virtù dei forti, infatti tu sei già esausto alle nove di mattina,",
+                "la vita è come uno specchio: se le sorridi, lei ti guarda con perplessità,",
+                "i veri amici si vedono nel momento del bisogno, motivo per cui sei rimasto solo,",
+                "non è mai troppo tardi per cambiare, ma adesso è comunque troppo faticoso,",
+                "l'amore muove il mondo, ma è il denaro che paga il carburante,",
+                "seguire il proprio cuore è romantico, finché non ti porta direttamente nei guai,",
+                "il talento ti apre molte porte, ma la pigrizia le chiude tutte a chiave,",
+                "la serenità è uno stato mentale bellissimo che dura esattamente tre secondi"
+            ],
+            C: [
+                "e allora tanto vale",
+                "perché in fondo l'importante è",
+                "ed è lì che capisci che bisogna",
+                "quindi l'unica soluzione è",
+                "e pazienza se tutto va a rotoli: l'essenziale è",
+                "proprio come insegnano i saggi: conviene",
+                "e allora sorridi e decidi di",
+                "perché lamentarsi non serve a niente, meglio",
+                "ed è bellissimo capire che basta",
+                "quindi fai un bel respiro e prova a",
+                "perché alla fine la scelta migliore è",
+                "e pazienza per il resto, tu pensa solo a",
+                "ed è inutile girarci intorno: dovresti",
+                "quindi chiudi gli occhi e prova a",
+                "e prima che qualcuno ti rovini la giornata, vai a",
+                "e invece di prenderti troppo sul serio, prova a",
+                "quindi senza fare troppi drammi ti conviene",
+                "e per evitare altre delusioni ti consiglio di",
+                "e se proprio vuoi un consiglio da amico, dovresti",
+                "quindi metti via le buone intenzioni e vai a",
+                "e piuttosto che cercare il senso della vita, dovresti",
+                "e prima di salvaguardare il tuo karma, pensa a",
+                "quindi abbassa notevolmente le tue aspettative e inizia a",
+                "e per non sbagliare mai più la mossa giusta, inizia a",
+                "e invece di aspettare un miracolo, ti conviene",
+                "quindi smetti di fare il filosofo e inizia a",
+                "e prima che la realtà ti dia un'altra mazzata, vai a",
+                "e se proprio ci tieni alla tua salute mentale, ti conviene",
+                "quindi accetta la tua completa irrilevanza e prova a",
+                "e per evitare di rimanerci male ancora una volta, vai a",
+                "e prima di rovinarti del tutto l'umore, ti conviene",
+                "quindi invece di cercare risposte profonde, vai a",
+                "e per dimostrare a tutti quanto sei maturo, dovresti",
+                "e senza stare lì a fare troppe speculazioni, prova a",
+                "quindi raccogli i pezzi del tuo orgoglio e vai a",
+                "e prima di fare l'ennesima scelta sbagliata, ti conviene",
+                "e invece di ascoltare i soliti guru del web, pensa a",
+                "quindi spegni subito il cervello ed esci a",
+                "e se la vita continua a darti limoni, tu fai finta di niente e vai a",
+                "e prima che ti chiedano di fare qualcosa di utile, affrettati a",
+                "quindi smetti di inseguire i mulini a vento e pensa solo a",
+                "e invece di piangere sul latte versato, fai prima a",
+                "e per evitare di dover dare spiegazioni a chiunque, vai a",
+                "quindi metti un bel mi piace a te stesso e inizia a",
+                "e invece di continuare a fare la vittima, dovresti",
+                "e per salvare il salvabile di questa giornata, ti conviene",
+                "quindi prendi la tua dignità, mettila nel cassetto e vai a",
+                "e invece di rimuginare sulle solite cose, fai un bel sorriso e vai a",
+                "e per evitare ulteriori complicazioni esistenziali, prova semplicemente a",
+                "quindi alza le spalle, sospira profondamente e affrettati a",
+                "e invece di cercare di cambiare il mondo, accontentati di",
+                "e prima di sprecare altro tempo prezioso, fai prima a",
+                "quindi lascia che gli altri si affannino e tu limita a",
+                "e per non rovinarti la digestione, ti conviene semplicemente",
+                "e invece di inseguire vette inarrivabili, dovresti imparare a",
+                "quindi chiudi la porta a chiave, spegni le luci e pensa a",
+                "e per dimostrare che hai capito come gira il mondo, vai a",
+                "e prima che la realtà ti svegli dal sogno, prova subito a",
+                "quindi metti da parte le grandi teorie e pensa soltanto a",
+                "e per evitare brutte sorprese dal destino, fai un bel respiro e vai a"
+            ],
+            D: [
+                "mordere la vita prima che ti chieda il conto.",
+                "ordinare un altro cornetto e perdonarsi di esistere.",
+                "farti una risata e tirare dritto.",
+                "mandare tutti a quel paese con eleganza.",
+                "ricominciare da capo, ma stavolta con più calma.",
+                "fare finta di niente e goderti il caffè.",
+                "accettare il caos e andare a dormire presto.",
+                "spegnere il telefono e fare finta di essere all'estero.",
+                "mantenere la calma, tanto peggio di così non può andare.",
+                "mangiarti una pizza e non pensarci più.",
+                "camminare a testa alta, anche con le scarpe bagnate.",
+                "bere un bicchiere d'acqua e lasciar perdere.",
+                "sorridere a tutti, giusto per farli innervosire.",
+                "abbracciare chi ti sta vicino e regalarti un'ora di sonno.",
+                "abbandonare le aspettative e prenderti una brioche.",
+                "tornare a letto e riprovarci direttamente mese prossimo.",
+                "mettere la modalità aereo e fingere di non essere mai nato.",
+                "ordinare una birra grande e incolpare il destino.",
+                "scendere dal piedistallo e fare un bel riposino.",
+                "accettare la sconfitta con grande dignità e molta pigrizia.",
+                "smettere di credere nelle favole e finire il pacco di patatine.",
+                "disdire tutti gli impegni e guardare il soffitto.",
+                "chiedere scusa a te stesso per averci creduto anche stavolta.",
+                "far finta di aver capito tutto e cambiare discorso.",
+                "stenderti sul divano prima che la vita ti rincorra.",
+                "ringraziare tutti e uscire dalla stanza senza fare rumore.",
+                "colpevolizzare la sfortuna e ordinare d'asporto.",
+                "mettere in pausa le tue ambizioni e farti una camomilla.",
+                "prendere atto della situazione e darti malato.",
+                "lasciar perdere i grandi sogni e accontentarti di un cornetto.",
+                "spegnere il cervello e guardare una serie tv di terza categoria.",
+                "fare spallucce e ordinare della frittura.",
+                "riporre la tua autostima in un posto sicuro e non toccarla più.",
+                "mettere un punto fisso e far finta che vada tutto a meraviglia.",
+                "prendere un bel gelato e far finta che la realtà non esista.",
+                "cancellarti dai social e andare a vivere in una grotta.",
+                "abbandonare la nave prima che affondi del tutto.",
+                "comprare qualcosa di completamente inutile per consolarti.",
+                "staccare la spina e far finta di aver perso la memoria.",
+                "mangiarti le unghie e sperare nella provvidenza.",
+                "fare un riposino tattico e rinviare i problemi a domani.",
+                "cercare una scusa credibile per non uscire di casa.",
+                "versarti un bel bicchiere e brindare al disastro.",
+                "aprire la finestra e urlare forte, giusto per sfogo.",
+                "nasconderti sotto le coperte finché non passa la tempesta.",
+                "delegare tutto a qualcun altro e prenderti il merito.",
+                "ammettere che non era giornata e andare al bar.",
+                "stare in silenzio e sperare che nessuno noti la tua presenza.",
+                "regalarti una pausa caffè di quattro ore consecutive.",
+                "mordere un trancio di focaccia e dimenticare le tue ambizioni.",
+                "fare un bel respiro e dare la colpa al cambio di stagione.",
+                "mettere il silenzioso e fare finta di aver finito i giga.",
+                "accettare il tuo destino di pigrizia e farti una pennica.",
+                "farti una doccia calda e fingere che sia tutto a posto.",
+                "chiudere gli occhi e sperare che il problema si risolva da solo.",
+                "rispondere 'ci penso' e non pensarci mai più.",
+                "mangiarti una tavoletta di cioccolato e perdonarti subito.",
+                "ordinare del sushi e dimenticare i tuoi doveri.",
+                "rinunciare ai tuoi propositi con grande serenità d'animo.",
+                "sorridere a mezza bocca e cambiare completamente vita.",
+                "lanciare la tazzina contro il muro e far finta che sia stato il gatto.",
+                "scaraventare la tastiera a terra per sentire un bel rumore liberatorio."
+            ]
+        };
+
+        let currentText = "";
+
+        function generateQuote() {
+            const a = database.A[Math.floor(Math.random() * database.A.length)];
+            const b = database.B[Math.floor(Math.random() * database.B.length)];
+            const c = database.C[Math.floor(Math.random() * database.C.length)];
+            const d = database.D[Math.floor(Math.random() * database.D.length)];
+
+            currentText = `${a} ${b} ${c} ${d}`;
+            document.getElementById('quoteOutput').textContent = `"${currentText}"`;
+        }
+
+        function shareQuote() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Pensiero Motivazionale',
+                    text: `"${currentText}"`
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(`"${currentText}"`).then(() => {
+                    showToast();
+                });
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+
+        window.onload = generateQuote;
+    </script>
+</body>
+</html>
