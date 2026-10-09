@@ -65,3 +65,180 @@
                 <span>DIVULGA AL REPARTO</span>
             </button>
         </div>
+
+    </main>
+
+    <!-- Toast Notifica Copia -->
+    <div id="toast" class="fixed bottom-6 bg-[#1A251B] text-white text-xs sm:text-sm px-4 py-3 rounded-xl shadow-xl transition-all duration-300 opacity-0 pointer-events-none">
+        DISPACCIO COPIATO NEGLI APPUNTI!
+    </div>
+
+    <script>
+        const database = {
+            A: [
+                "Vedo un agente alla stazione e dico:",
+                "In accademia ci insegnavano che",
+                "Faccio cinquanta flessioni e penso:",
+                "Guardando il degrado in centro è chiaro:",
+                "Un soldato vero sa benissimo che",
+                "Pattugliando i confini, balza all'occhio che",
+                "Cento chilometri di marcia provano che",
+                "Tra teorie woke e asterischi, è ovvio:",
+                "Davanti al disastro delle stazioni urbane,",
+                "In trincea non c'erano fluidi, solo",
+                "Per chiunque abbia polso e buon senso,",
+                "Di fronte ai clandestini sui moli,",
+                "Osservando la mancanza di disciplina nei giovani,",
+                "Senza dover leggere trattati di strategia,",
+                "Passeggiando in una piazza occupata abusivamente,",
+                "Prima del rancio mattutino, confermo:",
+                "Contro il bavaglio dei soliti radical chic,",
+                "Di fronte alla svalutazione dei padri,",
+                "Visto lo stato pietoso della sicurezza,",
+                "I nostri Avi non avevano dubbi:",
+                "Guardando chi bivacca sui monumenti,",
+                "Tra cattedre inclusive e asili gender,",
+                "A tutti i professori d'orchestra rispondo:",
+                "Mentre le forze dell'ordine hanno le mani legate,",
+                "Per difendere la nostra civiltà,",
+                "Analizzando la perdita di dignità nazionale,",
+                "Senza cedere di un solo millimetro:",
+                "Davanti al trionfo dell'anarchia urbana,",
+                "Chi non ha mai comandato uomini ignora che",
+                "Contro i bazar etnici e il degrado:"
+            ],
+            B: [
+                "la virile rigidezza non si piega alle mode,",
+                "l'ordine pubblico si fa con la baionetta,",
+                "la patria si difende, non si discute,",
+                "i confini non sono negoziabili, sono sacri,",
+                "la fluidità biologica è un'offesa alla natura,",
+                "l'invasione di clandestini va bloccata subito,",
+                "il maschio alpha non chiede scusa a nessuno,",
+                "il buonismo della sinistra ha fallito ovunque,",
+                "la legittima difesa deve essere totale,",
+                "la disciplina è l'unico pilastro che resta,",
+                "la cancel culture è solo fuffa progressista,",
+                "il rispetto della divisa viene prima di tutto,",
+                "le tradizioni non si svendono per i cookie,",
+                "l'italianità si difende con forza e orgoglio,",
+                "la famiglia naturale non ammette asterischi,",
+                "il dovere e l'obbedienza sono stati aboliti,",
+                "la certezza della pena è l'unica cura,",
+                "il patriottismo non è una colpa da espiare,",
+                "le baby gang vanno addestrate o punite,",
+                "la transizione green è una truffa mondiale,",
+                "il conformismo fluidificato ci sta rammollendo,",
+                "i salotti televisivi non capiscono la trincea,",
+                "le lobby LGBTQ+ esagerano senza freno,",
+                "il rispetto della bandiera non è un optional,",
+                "la microcriminalità si combatte col pugno di ferro,",
+                "il codice di marcia vale per chiunque,",
+                "la demografia crolla senza padri autorevoli,",
+                "gli occupanti abusivi vanno sgomberati subito,",
+                "la nostra identità cristiana non si tocca,",
+                "il lassismo garantista protegge solo i delinquenti,"
+            ],
+            C: [
+                "quindi serve un intervento risolutivo:",
+                "pertanto ordino senza indugio di",
+                "ragion per cui esigo di",
+                "e allora, con passo marziale, dobbiamo",
+                "esigo quindi dal reparto di",
+                "e chi non ci sta, farebbe bene a",
+                "motivo per cui è tempo di",
+                "dunque, senza cedere al politicamente corretto,",
+                "pertanto, con rigore e fermezza, bisogna",
+                "e per non sbagliare la mossa, dobbiamo",
+                "ragion per cui, a testa alta, bisogna",
+                "e senza pietà né burocrazia, andiamo a",
+                "pertanto, per salvare la civiltà, dobbiamo",
+                "motivo per cui, rifiutando ogni debolezza,",
+                "e allora, con spirito di corpo, andate a",
+                "quindi, contro il bavaglio progressista,",
+                "e prima che sia troppo tardi, dobbiamo",
+                "ragion per cui, con spina dorsale, bisogna",
+                "pertanto, senza fare troppi complimenti,",
+                "esigo immediatezza e ordino di",
+                "e per ripristinare il decoro, conviene",
+                "quindi, smettendola di fare i filosofi,",
+                "motivo per cui, senza paura del fango,",
+                "pertanto, per non fare la fine dei deboli,",
+                "ragion per cui, con l'orgoglio dei padri,",
+                "e senza aspettare le direttive europee,",
+                "quindi, per rimettere in riga il paese,",
+                "pertanto, rifiutando le stravaganze,",
+                "esigo che ogni vero soldato vada a",
+                "e per dimostrare chi comanda davvero,"
+            ],
+            D: [
+                "blindare le stazioni e cacciare i predoni.",
+                "restituire il manganello alle forze dell'ordine.",
+                "inviare i reparti speciali nei centri urbani.",
+                "applicare il blocco navale e sigillare tutto.",
+                "reintrodurre la leva obbligatoria per tutti.",
+                "sgomberare gli abusivi col metodo d'assalto.",
+                "estirpare la teoria gender dalle scuole.",
+                "ristabilire la disciplina e l'ordine naturale.",
+                "difendere i confini col pugno di ferro.",
+                "fare cinquanta flessioni e smettere di piagnucolare.",
+                "autorizzare la legittima difesa senza limiti.",
+                "punire gli imbrattatori con lavori forzati.",
+                "eliminare asterischi e stravaganze linguistiche.",
+                "proteggere la patria da futili mode fluidificate.",
+                "imporre il coprifuoco e ripulire le periferie.",
+                "mettere in riga i giovani senza spina dorsale.",
+                "rifiutare insetti e imposizioni di Bruxelles.",
+                "ristabilire l'autorità patriarcale senza scuse.",
+                "difendere la proprietà privata a ogni costo.",
+                "marciare dritti senza guardare in faccia nessuno.",
+                "riportare il rispetto della bandiera nelle aule.",
+                "arrestare i delinquenti e buttare la chiave.",
+                "ispezionare i bazar e ripristinare la legalità.",
+                "restituire decoro e orgoglio al tricolore.",
+                "disarmare i comitati e militarizzare l'area.",
+                "affrontare il nemico woke con marziale fermezza.",
+                "mettere fine al buonismo e passare all'azione.",
+                "chiudere i confini e difendere la specie.",
+                "imporre il rispetto assoluto per i Caduti.",
+                "marciare compatti verso la vittoria della tradizione."
+            ]
+        };
+
+        let currentText = "";
+
+        function generateQuote() {
+            const a = database.A[Math.floor(Math.random() * database.A.length)];
+            const b = database.B[Math.floor(Math.random() * database.B.length)];
+            const c = database.C[Math.floor(Math.random() * database.C.length)];
+            const d = database.D[Math.floor(Math.random() * database.D.length)];
+
+            currentText = `${a} ${b} ${c} ${d}`;
+            document.getElementById('quoteOutput').textContent = `"${currentText}"`;
+        }
+
+        function shareQuote() {
+            if (navigator.share) {
+                navigator.share({
+                    title: 'Ordine del giorno del Bracco Vanny',
+                    text: `"${currentText}"`
+                }).catch(() => {});
+            } else {
+                navigator.clipboard.writeText(`"${currentText}"`).then(() => {
+                    showToast();
+                });
+            }
+        }
+
+        function showToast() {
+            const toast = document.getElementById('toast');
+            toast.classList.remove('opacity-0', 'pointer-events-none');
+            setTimeout(() => {
+                toast.classList.add('opacity-0', 'pointer-events-none');
+            }, 2500);
+        }
+
+        window.onload = generateQuote;
+    </script>
+</body>
+</html>
